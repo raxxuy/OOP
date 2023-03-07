@@ -67,7 +67,7 @@ public:
         if (p.hasBicycle() && !bikes) return *this;                 // ako ne drzi vozot tochaci
         Patnik *tmp = passenger;                                    // za kopiranje
         passenger = new Patnik[passengers + 1];                     // se prosiruva pointerot so pravenje nov size
-        for (int i = 0; i < passengers; i++) passenger[i] = tmp[i]; // se kopiraat tmp patnicite na passenger pointerotchar
+        for (int i = 0; i < passengers; i++) passenger[i] = tmp[i]; // se kopiraat tmp patnicite na passenger pointerot
         passenger[passengers] = p;                                  // noviot patnik
         passengers++;                                               // se zgolemuva brojot na patnici
         return *this;
