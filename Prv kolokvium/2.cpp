@@ -111,8 +111,7 @@ public:
         List *tmp = list;                                   // za kopiranje
         list = new List[lists + 1];                         // se prosiruva pointerot so pravenje nov size
         for (int i = 0; i < lists; i++) list[i] = tmp[i];   // se kopiraat tmp listite na list pointerot
-        list[lists] = l;                                    // nov list
-        lists++;                                            // se zgolemuva brojot na listi
+        list[lists++] = l;                                  // nov list i se zgolemuva brojot na listi so ++
         successful_attempts++;                              // ako uspea da se addne nov list
     }
 

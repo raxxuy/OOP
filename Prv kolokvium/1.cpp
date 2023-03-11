@@ -39,8 +39,8 @@ private: // so treba da sodrzi
     int max_minutes;
 public:
     CD (int max_minutes = 0) { // constructor
-        this->max_minutes = max_minutes;
         pesni = 0; // initializing size - pesna e so static allocation znaci ne treba "= new Pesna[...."
+        this->max_minutes = max_minutes;
     }
 
     int getBroj () {
@@ -59,10 +59,7 @@ public:
         int minutes = 0;
         if (pesni < 10) {
             for (int i = 0; i < pesni; i++) minutes += pesna[i].getMinutes();
-            if (minutes + p.getMinutes() < max_minutes) {   // ako e pomalku od limitot
-                pesna[pesni] = p;                           // ne e pointer so znaci ne treba uste 4 linii
-                pesni++;
-            }
+            if (minutes + p.getMinutes() < max_minutes) pesna[pesni++] = p;   // ako e pomalku od limitot
         }
     }
 };

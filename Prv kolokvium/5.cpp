@@ -67,8 +67,7 @@ public:
         Gitara *tmp = gitara;                                   // za kopiranje
         gitara = new Gitara[gitari + 1];                        // se prosiruva pointerot so pravenje nov size
         for (int i = 0; i < gitari; i++) gitara[i] = tmp[i];    // se kopiraat tmp gitarite na gitara pointerot
-        gitara[gitari] = g;                                     // nova gitara
-        gitari++;                                               // se zgolemuva brojot na gitari
+        gitara[gitari++] = g;                                     // nova gitara i se zgolemuva brojot na gitari
     }
 
     void prodadi (Gitara g) {
@@ -76,10 +75,7 @@ public:
         auto *tmp = new Gitara[gitari];     // Gitara *tmp
         for (int i = 0; i < gitari; i++) {
             if (gitara[i].daliIsti(g)) sold++; // se zgolemuva ako ima isti gitari
-            else {
-                tmp[tmp_gitari] = gitara[i];  // taa so ne e prodadena se stava vo tmp
-                tmp_gitari++;                 // size
-            }
+            else tmp[tmp_gitari++] = gitara[i];  // taa so ne e prodadena se stava vo tmp
         }
         gitara = new Gitara[gitari -= sold]; // se menuva goleminata na pointerot also wtf moze [a -= b]????
         for (int i = 0; i < tmp_gitari; i++) gitara[i] = tmp[i]; // se kopiraat tie so ne se prodadeni

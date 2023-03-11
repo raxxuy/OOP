@@ -59,8 +59,7 @@ public:
         StockRecord *tmp = company;                                 // za kopiranje
         company = new StockRecord[companies + 1];                   // se prosiruva pointerot so pravenje nov size
         for (int i = 0; i < companies; i++) company[i] = tmp[i];    // se kopiraat tmp kompaniite na company pointerot
-        company[companies] = sr;                                    // nova kompanija
-        companies++;                                                // se zgolemuva brojot na patnici
+        company[companies++] = sr;                                    // nova kompanija i se zgolemuva brojot na patnici so ++
         return *this;
     }
 

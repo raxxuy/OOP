@@ -68,8 +68,7 @@ public:
         Patnik *tmp = passenger;                                    // za kopiranje
         passenger = new Patnik[passengers + 1];                     // se prosiruva pointerot so pravenje nov size
         for (int i = 0; i < passengers; i++) passenger[i] = tmp[i]; // se kopiraat tmp patnicite na passenger pointerotchar
-        passenger[passengers] = p;                                  // noviot patnik
-        passengers++;                                               // se zgolemuva brojot na patnici
+        passenger[passengers++] = p;                                // noviot patnik i se zgolemuva brojot na patnici so ++
         return *this;
     }
 
